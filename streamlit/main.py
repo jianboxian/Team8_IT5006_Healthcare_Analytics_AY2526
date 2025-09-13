@@ -50,7 +50,8 @@ show_pages = {
         st.Page(ROOT / "streamlit" / "pages" / "Correlation_Heatmap.py",title="Correlation Heatmap",icon="📊"),
     ],
     "Key Insights":[
-        st.Page(ROOT / "streamlit" / "pages" / "Key_Insights" /"crosstab_readmission_vs_medical_specialty.py",title="Crosstab: Readmission VS Medical Specialty",icon="🎮"),
+        st.Page(ROOT / "streamlit" / "pages" / "Key_Insights" /"crosstab_readmission_vs_medical_specialty.py",title="Crosstab: Medical Specialty VS Readmission",icon="🧠"),
+        st.Page(ROOT / "streamlit" / "pages" / "Key_Insights" /"crosstab_readmission_vs_insulin.py",title="Crosstab: Insulin VS Readmission",icon="🧠"),
     ],
 
 
