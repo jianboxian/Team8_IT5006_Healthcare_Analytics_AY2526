@@ -17,21 +17,21 @@ st.session_state["df_variables"] = df_variables
 st.session_state["df_origin"] = df_origin
 show_pages = {
     "Variable Explorations":[
-        st.Page(ROOT / "streamlit" / "pages" / "variable_exploration.py",title="Variable Explorations",icon="📊"),
+        st.Page(ROOT / "streamlit" / "pages" / "variable_exploration.py",title="Variable Overview",icon="📊"),
         st.Page(ROOT / "streamlit" / "pages" / "categorical_variable_frequency_table.py",title="Categorical Variable Frequency Table",icon="📋"),
         st.Page(ROOT / "streamlit" / "pages" / "descriptive_stats_table.py",title="Descriptive Statistics Table",icon="📈"),
         st.Page(ROOT / "streamlit" / "pages" / "missing_values_by_variable.py",title="Missing Values by Variable",icon="❓"),
         st.Page(ROOT / "streamlit" / "pages" / "unique_values_by_variable.py",title="Unique Values by Variable",icon="🔢"),
     ],
     "Univariate Analysis by Category":[
-        st.Page(ROOT / "streamlit" / "pages" / "Univariate_Analysis" / "UA_Demographics.py",title="Demographics",icon="📉"),
-        st.Page(ROOT / "streamlit" / "pages" / "Univariate_Analysis" / "UA_Admission_Details.py",title="Admission Details",icon="📉"),
-        st.Page(ROOT / "streamlit" / "pages" / "Univariate_Analysis" / "UA_Diagnoses.py",title="Diagnoses",icon="📉"),
-        st.Page(ROOT / "streamlit" / "pages" / "Univariate_Analysis" / "UA_Healthcare_Provider.py",title="Healthcare Provider",icon="📉"),
-        st.Page(ROOT / "streamlit" / "pages" / "Univariate_Analysis" / "UA_Clinical_Metrics.py",title="Clinical Metrics",icon="📉"),
-        st.Page(ROOT / "streamlit" / "pages" / "Univariate_Analysis" / "UA_Laboratory_Results.py",title="Laboratory Results",icon="📉"),
-        st.Page(ROOT / "streamlit" / "pages" / "Univariate_Analysis" / "UA_Medications.py",title="Medications",icon="📉"),
-        st.Page(ROOT / "streamlit" / "pages" / "Univariate_Analysis" / "UA_Treatment_Changes.py",title="Treatment Changes",icon="📉"),
+        st.Page(ROOT / "streamlit" / "pages" / "Univariate_Analysis" / "UA_Demographics.py",title="Demographics Histogram",icon="📉"),
+        st.Page(ROOT / "streamlit" / "pages" / "Univariate_Analysis" / "UA_Admission_Details.py",title="Admission Details Histogram",icon="📉"),
+        st.Page(ROOT / "streamlit" / "pages" / "Univariate_Analysis" / "UA_Diagnoses.py",title="Diagnoses Histogram",icon="📉"),
+        st.Page(ROOT / "streamlit" / "pages" / "Univariate_Analysis" / "UA_Healthcare_Provider.py",title="Healthcare Provider Histogram",icon="📉"),
+        st.Page(ROOT / "streamlit" / "pages" / "Univariate_Analysis" / "UA_Clinical_Metrics_Histogram.py",title="Clinical Metrics Histogram",icon="📉"),
+        st.Page(ROOT / "streamlit" / "pages" / "Univariate_Analysis" / "UA_Laboratory_Results.py",title="Laboratory Results Histogram",icon="📉"),
+        st.Page(ROOT / "streamlit" / "pages" / "Univariate_Analysis" / "UA_Medications.py",title="Medications Histogram",icon="📉"),
+        st.Page(ROOT / "streamlit" / "pages" / "Univariate_Analysis" / "UA_Treatment_Changes.py",title="Treatment Changes Histogram",icon="📉"),
     ],
     "Bivariate Analysis":[
         # st.Page("./pages/pair_plot_for_showing_the_distribution.py",title="Pair Plot for Showing the Distribution",icon="📉"),
@@ -40,6 +40,7 @@ show_pages = {
         st.Page(ROOT / "streamlit" / "pages" / "Bivariate_Analysis" / "BA_Admission_Details.py",title="Admission Details",icon="📉"),
         st.Page(ROOT / "streamlit" / "pages" / "Bivariate_Analysis" / "BA_Diagnoses.py",title="Diagnoses",icon="📉"),
         st.Page(ROOT / "streamlit" / "pages" / "Bivariate_Analysis" / "BA_Healthcare_Provider.py",title="Healthcare Provider",icon="📉"),
+        st.Page(ROOT / "streamlit" / "pages" / "Bivariate_Analysis" / "BA_Clinical_Metrics_BoxPlot.py",title="Clinical Metrics BoxPlot",icon="📉"),
         ##redo this one ####st.Page("./pages/Bivariate_Analysis/BA_Clinical_Metrics.py",title="Clinical Metrics",icon="📉"),
         st.Page(ROOT / "streamlit" / "pages" / "Bivariate_Analysis" / "BA_Laboratory_Results.py",title="Laboratory Results",icon="📉"),
         st.Page(ROOT / "streamlit" / "pages" / "Bivariate_Analysis" / "BA_Medications.py",title="Medications",icon="📉"),
