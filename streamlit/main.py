@@ -49,8 +49,8 @@ show_pages = {
     "Multivariate Analysis":[
         st.Page(ROOT / "streamlit" / "pages" / "Correlation_Heatmap.py",title="Correlation Heatmap",icon="📊"),
     ],
-    "Play Ground":[
-        st.Page(ROOT / "streamlit" / "pages" / "playground.py",title="Playground",icon="🎮"),
+    "Key Insights":[
+        st.Page(ROOT / "streamlit" / "pages" / "Key_Insights" /"crosstab_readmission_vs_medical_specialty.py",title="Crosstab: Readmission VS Medical Specialty",icon="🎮"),
     ],
 
 
