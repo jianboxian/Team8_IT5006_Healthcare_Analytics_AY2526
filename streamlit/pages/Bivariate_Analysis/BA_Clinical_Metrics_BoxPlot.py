@@ -9,7 +9,7 @@ st.title("Clinical Metrics Distribution BoxPlots")
 df_variables = st.session_state["df_variables"]
 df_origin = st.session_state["df_origin"]
 
-list_of_cols = ['num_lab_procedures', 'num_procedures', 'num_medications','number_outpatient','number_emergency','number_inpatient','number_diagnoses']
+list_of_cols = ['','num_lab_procedures', 'num_procedures', 'num_medications','number_outpatient','number_emergency','number_inpatient','number_diagnoses']
 
 tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs(list_of_cols)
 

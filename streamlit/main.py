@@ -17,11 +17,12 @@ st.session_state["df_variables"] = df_variables
 st.session_state["df_origin"] = df_origin
 show_pages = {
     "Variable Explorations":[
-        st.Page(ROOT / "streamlit" / "pages" / "variable_exploration.py",title="Variable Overview",icon="🗒️"),
-        st.Page(ROOT / "streamlit" / "pages" / "categorical_variable_frequency_table.py",title="Categorical Variable Frequency Table",icon="📋"),
-        st.Page(ROOT / "streamlit" / "pages" / "descriptive_stats_table.py",title="Descriptive Statistics Table",icon="📈"),
-        st.Page(ROOT / "streamlit" / "pages" / "missing_values_by_variable.py",title="Missing Values by Variable",icon="❓"),
-        st.Page(ROOT / "streamlit" / "pages" / "unique_values_by_variable.py",title="Unique Values by Variable",icon="🔢"),
+        st.Page(ROOT / "streamlit" / "pages" / "Variable_Exploration" / "variable_exploration.py",title="Variable Overview",icon="🗒️"),
+        st.Page(ROOT / "streamlit" / "pages" / "Variable_Exploration" / "categorical_variable_frequency_table.py",title="Categorical Variable Frequency Table",icon="📋"),
+        st.Page(ROOT / "streamlit" / "pages" / "Variable_Exploration" / "descriptive_stats_table.py",title="Descriptive Statistics Table",icon="📈"),
+        st.Page(ROOT / "streamlit" / "pages" / "Variable_Exploration" / "missing_values_by_variable.py",title="Missing Values by Variable",icon="❓"),
+        st.Page(ROOT / "streamlit" / "pages" / "Variable_Exploration" / "unique_values_by_variable.py",title="Unique Values by Variable",icon="🔢"),
+        st.Page(ROOT / "streamlit" / "pages" / "Variable_Exploration" / "readmitted_histogram.py",title="Dependent Variable Histogram",icon="📊"),
     ],
     "Univariate Analysis by Category":[
         st.Page(ROOT / "streamlit" / "pages" / "Univariate_Analysis" / "UA_Demographics.py",title="Demographics Histogram",icon="📊"),
@@ -47,7 +48,10 @@ show_pages = {
         st.Page(ROOT / "streamlit" / "pages" / "Bivariate_Analysis" / "BA_Treatment_Changes.py",title="Treatment Changes",icon="🥧"),
     ],
     "Multivariate Analysis":[
-        st.Page(ROOT / "streamlit" / "pages" / "Correlation_Heatmap.py",title="Correlation Heatmap",icon="🔢"),
+        st.Page(ROOT / "streamlit" / "pages" / "Multivariate_Analysis" /"MA_Correlation_Heatmap.py",title="Correlation Heatmap",icon="🔢"),
+        st.Page(ROOT / "streamlit" / "pages" / "Multivariate_Analysis" /"MA_Time_in_Hospital_vs_No_of_Diagnoses.py",title="Time In Hospital vs Number of Diagnoses",icon="📐"),
+        st.Page(ROOT / "streamlit" / "pages" / "Multivariate_Analysis" /"MA_Age_vs_No_of_Diagnoses.py",title="Age vs Number of Diagnoses",icon="📐"),
+        st.Page(ROOT / "streamlit" / "pages" / "Multivariate_Analysis" /"MA_Number_of_Procedures_vs_No_of_Diagnoses.py",title="Number of Procedures vs Number of Diagnoses",icon="📐"),
     ],
     "Key Insights":[
         st.Page(ROOT / "streamlit" / "pages" / "Key_Insights" /"crosstab_readmission_vs_medical_specialty.py",title="Crosstab: Medical Specialty VS Readmission",icon="🧠"),

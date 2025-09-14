@@ -11,7 +11,7 @@ df_origin = st.session_state["df_origin"]
 readmitted_statuses = df_origin['readmitted'].unique()
 
 
-tab1, tab2, tab3, tab4 = st.tabs(['admission_type_id', 'discharge_disposition_id', 'admission_source_id','time_in_hospital'])
+tab1, tab2, tab3, tab4, tab5 = st.tabs(['admission_type_id', 'discharge_disposition_id', 'admission_source_id','time_in_hospital','time_in_hospital BoxPlot'])
 
 with tab1:
     plt.figure(figsize=(10, 6))
@@ -132,5 +132,14 @@ with tab4:
             c = i % ncols
             axes[r, c].pie(time_in_hospital_counts, labels=time_in_hospital_counts.index, autopct='%1.1f%%', startangle=140)
             axes[r, c].set_title(f'Proportion of readmitted for Time in Hospital = {status}')
+    plt.tight_layout()
+    st.pyplot(plt)
+
+with tab5:
+    plt.figure(figsize=(10, 6))
+    sns.boxplot(x='readmitted', y='time_in_hospital', data=df_origin)
+    plt.title(f'Time in Hospital Distribution by Readmission Status BoxPlot')
+    plt.xlabel('Time in Hospital')
+    plt.ylabel('Readmission Status')
     plt.tight_layout()
     st.pyplot(plt)
