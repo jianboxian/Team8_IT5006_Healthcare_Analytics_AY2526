@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-st.title("Admission Details Distribution Histograms & Pie Chart")
+st.title("Admission Details Distribution Histograms & Pie Chart & BoxPlot")
 
 df_variables = st.session_state["df_variables"]
 df_origin = st.session_state["df_origin"]
