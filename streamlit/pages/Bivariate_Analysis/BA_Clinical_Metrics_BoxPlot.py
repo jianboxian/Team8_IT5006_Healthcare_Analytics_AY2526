@@ -17,6 +17,14 @@ tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs(list_of_cols)
 for index, col in enumerate(list_of_cols):
     with eval(f"tab{index+1}"):
         st.markdown(f"**Definition:** {df_variables[df_variables['name']==col]['description']}")
+        if col == 'num_lab_procedures' or col == 'num_medications':
+                st.markdown(""" **Findings and Observations**:  
+- We observed a consistent pattern where patients who had a higher median number of lab procedures and medications were more likely to be readmitted early. """)
+                st.markdown("---")
+        elif col == 'number_inpatient':
+            st.markdown(""" **Findings and Observations**:  
+- The 75th percentile value is significantly higher in patients who were readmitted early. This suggests a distinctive pattern that frequent past hospitalizations are strongly indicative of future early readmission risk. """)
+            st.markdown("---")
         plt.figure(figsize=(10, 6))
         sns.boxplot(x='readmitted', y= col, data=df_origin)
         plt.title(f'{col} Distribution by Readmission Status')

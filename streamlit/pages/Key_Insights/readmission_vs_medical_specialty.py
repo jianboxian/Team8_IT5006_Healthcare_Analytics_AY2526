@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from scipy.stats import chi2_contingency
 
-st.title("Crosstab: Readmission VS Medical Specialty")
+st.title("Readmission VS Medical Specialty")
 
 df_variables = st.session_state["df_variables"]
 df_origin = st.session_state["df_origin"]
@@ -22,15 +22,15 @@ However, when analyzing the proportion of early readmissions, Hematology/Oncolog
 
 st.markdown("---")
 st.write('\n Please refer to the statistics tables below: ')
-st.dataframe(ct)
+# st.dataframe(ct)
 
 
 chi2, p, dof, expected = chi2_contingency(ct)
 #st.write(f'chi2 = {chi2}, p = {p}, dof = {dof}')
-if p < 0.05:
-    st.write ('Reject null hypothesis: There is a significant association between readmission and medical specialty.')
-else:
-    st.write ('Fail to reject null hypothesis: There is no significant association between readmission and medical specialty.')
+# if p < 0.05:
+#     st.write ('Reject null hypothesis: There is a significant association between readmission and medical specialty.')
+# else:
+#     st.write ('Fail to reject null hypothesis: There is no significant association between readmission and medical specialty.')
 
 
 #Cross table for readmitted vs medical_specialty

@@ -16,6 +16,9 @@ tab1, tab2, tab3, tab4, tab5 = st.tabs(['admission_type_id', 'discharge_disposit
 with tab1:
     st.markdown(f"**Definition:** {df_variables[df_variables['name']=='admission_type_id']['description']}")
     st.markdown(""" **Type of admission** : `1`:Emergency  `2`:Urgent  `3`:Elective  etc.""")
+    st.markdown(""" **Findings and Observations**:  
+- Preliminary observations show that emergency-related admissions dominate the dataset, with over 50,000 patient encounters marked as either emergency-type. This reflects the real-world clinical severity of diabetes exacerbations requiring urgent intervention. """)
+    st.markdown("---")
     plt.figure(figsize=(10, 6))
     sns.countplot(data=df_origin, x='admission_type_id', hue='readmitted', stat="count")
     plt.xlabel('Admission Type ID')
@@ -146,10 +149,13 @@ with tab4:
 with tab5:
     st.markdown(f"**Definition:** {df_variables[df_variables['name']=='time_in_hospital']['description']}")
     st.markdown(""" **Number of days in hospital (1-14 days)** """)
+    st.markdown(""" **Findings and Observations**:  
+- Time in Hospital: Although the interquartile range at 25th-75th percentile appears similar across different patient groups, we observe that the median hospital stay duration was longer for patients who were readmitted (both early and late) """)
+    st.markdown("---")
     plt.figure(figsize=(10, 6))
     sns.boxplot(x='readmitted', y='time_in_hospital', data=df_origin)
     plt.title(f'Time in Hospital Distribution by Readmission Status BoxPlot')
-    plt.xlabel('Time in Hospital')
-    plt.ylabel('Readmission Status')
+    plt.ylabel('Time in Hospital')
+    plt.xlabel('Readmission Status')
     plt.tight_layout()
     st.pyplot(plt)

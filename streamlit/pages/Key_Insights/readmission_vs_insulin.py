@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from scipy.stats import chi2_contingency
 
-st.title("Crosstab: Readmission VS Insulin")
+st.title("Readmission VS Insulin")
 
 df_variables = st.session_state["df_variables"]
 df_origin = st.session_state["df_origin"]
@@ -37,17 +37,17 @@ drug_cols = df_origin.columns[24:49]
 st.markdown(""" **Findings and Observations**:  
 - After analyzing data related to all different medications with regards to patient readmission, we concluded that only Insulin provided a meaningful correlation. Patients in the “Up” and “Down” groups show a noticeably higher proportion of early readmissions, compared to “No” or “Steady” groups. This trend suggests that insulin dosage adjustments, whether increased or decreased, could be markers of clinical instability indicating the need for more intensive discharge planning and monitoring.""")
 st.markdown("---")
-for drug in ['insulin', 'diabetesMed']:
-    st.write(f"\n==={drug} vs Readmission===")
+for drug in ['insulin']:
+    # st.write(f"\n==={drug} vs Readmission===")
 
     ct = pd.crosstab(df_origin[drug], df_origin['readmitted'])
-    st.dataframe(ct)
+    # st.dataframe(ct)
     chi2, p, dof, expected = chi2_contingency(ct)
     # st.write(f'chi2 = {chi2}, p = {p}, dof = {dof}')
-    if p < 0.05:
-        st.write ('Reject null hypothesis: There is a significant association between readmission and the drug.')
-    else:
-        st.write ('Fail to reject null hypothesis: There is no significant association between readmission and the drug.')
+    # if p < 0.05:
+    #     st.write ('Reject null hypothesis: There is a significant association between readmission and the drug.')
+    # else:
+    #     st.write ('Fail to reject null hypothesis: There is no significant association between readmission and the drug.')
 
     ct_ratio = ct.div(ct.sum(axis=1), axis=0)
     st.write(f'\n=== crosstab (ratio): readmitted vs {drug} ===')
