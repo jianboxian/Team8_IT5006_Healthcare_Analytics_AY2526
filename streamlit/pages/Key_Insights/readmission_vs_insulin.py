@@ -34,7 +34,9 @@ drug_cols = df_origin.columns[24:49]
 #     plt.tight_layout()
 #     st.pyplot(plt)
 
-
+st.markdown(""" **Findings and Observations**:  
+- After analyzing data related to all different medications with regards to patient readmission, we concluded that only Insulin provided a meaningful correlation. Patients in the “Up” and “Down” groups show a noticeably higher proportion of early readmissions, compared to “No” or “Steady” groups. This trend suggests that insulin dosage adjustments, whether increased or decreased, could be markers of clinical instability indicating the need for more intensive discharge planning and monitoring.""")
+st.markdown("---")
 for drug in ['insulin', 'diabetesMed']:
     st.write(f"\n==={drug} vs Readmission===")
 

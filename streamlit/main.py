@@ -49,15 +49,14 @@ show_pages = {
     ],
     "Multivariate Analysis":[
         st.Page(ROOT / "streamlit" / "pages" / "Multivariate_Analysis" /"MA_Correlation_Heatmap.py",title="Correlation Heatmap",icon="🔢"),
-        st.Page(ROOT / "streamlit" / "pages" / "Multivariate_Analysis" /"MA_Time_in_Hospital_vs_No_of_Diagnoses.py",title="Time In Hospital vs Number of Diagnoses",icon="📐"),
-        st.Page(ROOT / "streamlit" / "pages" / "Multivariate_Analysis" /"MA_Age_vs_No_of_Diagnoses.py",title="Age vs Number of Diagnoses",icon="📐"),
-        st.Page(ROOT / "streamlit" / "pages" / "Multivariate_Analysis" /"MA_Number_of_Procedures_vs_No_of_Diagnoses.py",title="Number of Procedures vs Number of Diagnoses",icon="📐"),
+        st.Page(ROOT / "streamlit" / "pages" / "Multivariate_Analysis" /"MA_Time_in_Hospital_vs_No_of_Diagnoses.py",title="Time In Hospital vs Number of Diagnoses (LACE)",icon="📐"),
+        st.Page(ROOT / "streamlit" / "pages" / "Multivariate_Analysis" /"MA_Age_vs_No_of_Diagnoses.py",title="Age vs Number of Diagnoses (PCi)",icon="📐"),
+        st.Page(ROOT / "streamlit" / "pages" / "Multivariate_Analysis" /"MA_Number_of_Procedures_vs_No_of_Lab_Procedures.py",title="Number of Procedures vs Number of Lab Procedures",icon="📐"),
     ],
-    "Key Insights":[
-        st.Page(ROOT / "streamlit" / "pages" / "Key_Insights" /"crosstab_readmission_vs_medical_specialty.py",title="Crosstab: Medical Specialty VS Readmission",icon="🧠"),
-        st.Page(ROOT / "streamlit" / "pages" / "Key_Insights" /"crosstab_readmission_vs_insulin.py",title="Crosstab: Insulin VS Readmission",icon="🧠"),
+    "Other Key Insights":[
+        st.Page(ROOT / "streamlit" / "pages" / "Key_Insights" /"readmission_vs_medical_specialty.py",title="Medical Specialty VS Readmission",icon="🧠"),
+        st.Page(ROOT / "streamlit" / "pages" / "Key_Insights" /"readmission_vs_insulin.py",title="Insulin VS Readmission",icon="🧠"),
     ],
-
 
 }
 

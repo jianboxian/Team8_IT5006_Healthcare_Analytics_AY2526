@@ -21,7 +21,7 @@ However, when analyzing the proportion of early readmissions, Hematology/Oncolog
 """)
 
 st.markdown("---")
-st.write('\n Please refer to the statistics tables below ')
+st.write('\n Please refer to the statistics tables below: ')
 st.dataframe(ct)
 
 
