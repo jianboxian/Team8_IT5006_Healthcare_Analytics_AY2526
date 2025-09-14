@@ -14,6 +14,7 @@ readmitted_statuses = df_origin['readmitted'].unique()
 tab1, tab2, tab3, tab4, tab5 = st.tabs(['admission_type_id', 'discharge_disposition_id', 'admission_source_id','time_in_hospital','time_in_hospital BoxPlot'])
 
 with tab1:
+    st.markdown(f"**Definition:** {df_variables[df_variables['name']=='admission_type_id']['description']}")
     st.markdown(""" **Type of admission** : `1`:Emergency  `2`:Urgent  `3`:Elective  etc.""")
     plt.figure(figsize=(10, 6))
     sns.countplot(data=df_origin, x='admission_type_id', hue='readmitted', stat="count")
@@ -45,6 +46,7 @@ with tab1:
     plt.tight_layout()
     st.pyplot(plt)
 with tab2:
+    st.markdown(f"**Definition:** {df_variables[df_variables['name']=='discharge_disposition_id']['description']}")
     st.markdown(""" **Discharge destination** : `1`:Home  `3`:SNF  `6`:Home with service  etc.""")
     plt.figure(figsize=(10, 6))
     sns.countplot(data=df_origin, x='discharge_disposition_id', hue='readmitted', stat="count")
@@ -76,6 +78,7 @@ with tab2:
     plt.tight_layout()
     st.pyplot(plt)
 with tab3:
+    st.markdown(f"**Definition:** {df_variables[df_variables['name']=='admission_source_id']['description']}")
     st.markdown(""" **Source of admission** : `1`:Physician referral `7`:Emergency room  etc.""")
     plt.figure(figsize=(10, 6))
     sns.countplot(data=df_origin, x='admission_source_id', hue='readmitted', stat="count")
@@ -108,6 +111,7 @@ with tab3:
     st.pyplot(plt)
 
 with tab4:
+    st.markdown(f"**Definition:** {df_variables[df_variables['name']=='time_in_hospital']['description']}")
     st.markdown(""" **Number of days in hospital (1-14 days)** """)
     plt.figure(figsize=(10, 6))
     sns.countplot(data=df_origin, x='time_in_hospital', hue='readmitted', stat="count")
@@ -140,6 +144,7 @@ with tab4:
     st.pyplot(plt)
 
 with tab5:
+    st.markdown(f"**Definition:** {df_variables[df_variables['name']=='time_in_hospital']['description']}")
     st.markdown(""" **Number of days in hospital (1-14 days)** """)
     plt.figure(figsize=(10, 6))
     sns.boxplot(x='readmitted', y='time_in_hospital', data=df_origin)

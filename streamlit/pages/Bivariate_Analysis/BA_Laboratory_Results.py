@@ -13,6 +13,7 @@ readmitted_statuses = df_origin['readmitted'].unique()
 tab1, tab2 = st.tabs(['max_glu_serum', 'A1Cresult'])
 
 with tab1:
+    st.markdown(f"**Definition:** {df_variables[df_variables['name']=='max_glu_serum']['description']}")
     plt.figure(figsize=(10, 6))
     sns.histplot(data=df_origin, x='max_glu_serum', hue='readmitted', multiple='dodge', shrink=0.8, bins=5)
     plt.title('Max Glucose Serum Count Distribution by Readmission Status')
@@ -43,6 +44,7 @@ with tab1:
     plt.tight_layout()
     st.pyplot(plt)
 with tab2:
+    st.markdown(f"**Definition:** {df_variables[df_variables['name']=='A1Cresult']['description']}")
     plt.figure(figsize=(10, 6))
     sns.histplot(data=df_origin, x='A1Cresult', hue='readmitted', multiple='dodge', shrink=0.8, bins=5)
     plt.title('A1C Result Count Distribution by Readmission Status')

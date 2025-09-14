@@ -16,6 +16,7 @@ tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs(list_of_cols)
 
 for index, col in enumerate(list_of_cols):
     with eval(f"tab{index+1}"):
+        st.markdown(f"**Definition:** {df_variables[df_variables['name']==col]['description']}")
         plt.figure(figsize=(10, 6))
         sns.boxplot(x='readmitted', y= col, data=df_origin)
         plt.title(f'{col} Distribution by Readmission Status')

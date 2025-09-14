@@ -11,6 +11,7 @@ df_origin = st.session_state["df_origin"]
 readmitted_statuses = df_origin['readmitted'].unique()
 tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10 = st.tabs(['metformin', 'repaglinide','nateglinide','chlorpropamide','glimepiride','glipizide','glyburide','pioglitazone','rosiglitazone','insulin'])
 with tab1:
+    st.markdown(f"**Definition:** {df_variables[df_variables['name']=='metformin']['description']}")
     plt.figure(figsize=(10, 6))
     sns.histplot(data=df_origin['metformin'], bins=5, color='skyblue')
     plt.title('Metformin Count Distribution')
@@ -40,6 +41,7 @@ with tab1:
     plt.tight_layout()
     st.pyplot(plt)
 with tab2:
+    st.markdown(f"**Definition:** {df_variables[df_variables['name']=='repaglinide']['description']}")
     plt.figure(figsize=(10, 6))
     sns.histplot(data=df_origin['repaglinide'], bins=5, color='lightgreen')
     plt.title('Repaglinide Count Distribution')
@@ -68,6 +70,7 @@ with tab2:
     plt.tight_layout()
     st.pyplot(plt)
 with tab3:
+    st.markdown(f"**Definition:** {df_variables[df_variables['name']=='nateglinide']['description']}")
     plt.figure(figsize=(10, 6))
     sns.histplot(data=df_origin['nateglinide'], bins=5, color='salmon')
     plt.title('Nateglinide Count Distribution')
@@ -96,6 +99,7 @@ with tab3:
     plt.tight_layout()
     st.pyplot(plt)
 with tab4:
+    st.markdown(f"**Definition:** {df_variables[df_variables['name']=='chlorpropamide']['description']}")
     plt.figure(figsize=(10, 6))
     sns.histplot(data=df_origin['chlorpropamide'], bins=5, color='violet')
     plt.title('Chlorpropamide Count Distribution')
@@ -124,6 +128,7 @@ with tab4:
     plt.tight_layout()
     st.pyplot(plt)
 with tab5:
+    st.markdown(f"**Definition:** {df_variables[df_variables['name']=='glimepiride']['description']}")
     plt.figure(figsize=(10, 6))
     sns.histplot(data=df_origin['glimepiride'], bins=5, color='orange')
     plt.title('Glimepiride Count Distribution')
@@ -152,6 +157,7 @@ with tab5:
     plt.tight_layout()
     st.pyplot(plt)
 with tab6:
+    st.markdown(f"**Definition:** {df_variables[df_variables['name']=='glipizide']['description']}")
     plt.figure(figsize=(10, 6))
     sns.histplot(data=df_origin['glipizide'], bins=5, color='lightblue')
     plt.title('Glipizide Count Distribution')
@@ -180,6 +186,7 @@ with tab6:
     plt.tight_layout()
     st.pyplot(plt)
 with tab7:
+    st.markdown(f"**Definition:** {df_variables[df_variables['name']=='glyburide']['description']}")
     plt.figure(figsize=(10, 6))
     sns.histplot(data=df_origin['glyburide'], bins=5, color='lightcoral')
     plt.title('Glyburide Count Distribution')
@@ -207,7 +214,8 @@ with tab7:
             axes[r, c].set_title(f'Proportion of readmitted for Glyburide = {status}')
     plt.tight_layout()
     st.pyplot(plt)
-with tab8: 
+with tab8:
+    st.markdown(f"**Definition:** {df_variables[df_variables['name']=='pioglitazone']['description']}")
     plt.figure(figsize=(10, 6))
     sns.histplot(data=df_origin['pioglitazone'], bins=5, color='lightseagreen')
     plt.title('Pioglitazone Count Distribution')
@@ -236,6 +244,7 @@ with tab8:
     plt.tight_layout()
     st.pyplot(plt)
 with tab9:
+    st.markdown(f"**Definition:** {df_variables[df_variables['name']=='rosiglitazone']['description']}")
     plt.figure(figsize=(10, 6))
     sns.histplot(data=df_origin['rosiglitazone'], bins=5, color='plum')
     plt.title('Rosiglitazone Count Distribution')
@@ -264,6 +273,7 @@ with tab9:
     plt.tight_layout()
     st.pyplot(plt)
 with tab10:
+    st.markdown(f"**Definition:** {df_variables[df_variables['name']=='insulin']['description']}")
     plt.figure(figsize=(10, 6))
     sns.histplot(data=df_origin['insulin'], bins=5, color='lightpink')
     plt.title('Insulin Count Distribution')

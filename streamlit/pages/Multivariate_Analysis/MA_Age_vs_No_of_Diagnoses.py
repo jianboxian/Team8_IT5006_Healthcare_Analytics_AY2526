@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-st.title("PAge vs Number of Diagnoses (PCi)")
+st.title("Age vs Number of Diagnoses (PCi)")
 
 df_variables = st.session_state["df_variables"]
 df_origin = st.session_state["df_origin"]

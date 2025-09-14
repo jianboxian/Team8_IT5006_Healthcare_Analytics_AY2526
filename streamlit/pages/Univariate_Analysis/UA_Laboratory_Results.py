@@ -12,6 +12,7 @@ df_origin = st.session_state["df_origin"]
 tab1, tab2 = st.tabs(['max_glu_serum', 'A1Cresult'])
 
 with tab1:
+    st.markdown(f"**Definition:** {df_variables[df_variables['name']=='max_glu_serum']['description']}")
     plt.figure(figsize=(10, 6))
     sns.histplot(data=df_origin['max_glu_serum'], bins=5, color='skyblue')
     plt.title('Max Glucose Serum Count Distribution')
@@ -21,6 +22,7 @@ with tab1:
     st.pyplot(plt)
 
 with tab2:
+    st.markdown(f"**Definition:** {df_variables[df_variables['name']=='A1Cresult']['description']}")
     plt.figure(figsize=(10, 6))
     sns.histplot(data=df_origin['A1Cresult'], bins=5, color='skyblue')
     plt.title('A1C Result Count Distribution')

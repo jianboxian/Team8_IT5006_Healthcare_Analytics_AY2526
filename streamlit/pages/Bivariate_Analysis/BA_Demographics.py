@@ -15,6 +15,7 @@ tab1, tab2, tab3, tab4 = st.tabs(['Age', 'Gender', 'Race','Weight'])
 
 
 with tab1:
+    st.markdown(f"**Definition:** {df_variables[df_variables['name']=='age']['description']}")
     plt.figure(figsize=(10, 6))
     sns.countplot(data=df_origin, x='age', hue='readmitted', stat="count")
     plt.xlabel('Age')
@@ -46,6 +47,7 @@ with tab1:
     st.pyplot(plt)
 
 with tab2:
+    st.markdown(f"**Definition:** {df_variables[df_variables['name']=='gender']['description']}")
     plt.figure(figsize=(10, 6))
     sns.countplot(data=df_origin, x='gender', hue='readmitted', stat="count")
     plt.xlabel('Gender')
@@ -76,6 +78,7 @@ with tab2:
     st.pyplot(plt)
 
 with tab3:
+    st.markdown(f"**Definition:** {df_variables[df_variables['name']=='race']['description']}")
     plt.figure(figsize=(10, 6))
     sns.countplot(data=df_origin, x='race', hue='readmitted', stat="count")
     plt.xlabel('Race')
@@ -106,6 +109,7 @@ with tab3:
     st.pyplot(plt)
 
 with tab4:
+    st.markdown(f"**Definition:** {df_variables[df_variables['name']=='weight']['description']}")
     plt.figure(figsize=(10, 6))
     sns.countplot(data=df_origin, x='weight', hue='readmitted', stat="count")
     plt.xlabel('Weight')

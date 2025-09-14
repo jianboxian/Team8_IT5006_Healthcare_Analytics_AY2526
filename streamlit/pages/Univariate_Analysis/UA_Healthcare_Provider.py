@@ -12,6 +12,7 @@ df_origin = st.session_state["df_origin"]
 tab1, tab2= st.tabs(['payer_code', 'medical_specialty'])
 
 with tab1:
+    st.markdown(f"**Definition:** {df_variables[df_variables['name']=='payer_code']['description']}")
     plt.figure(figsize=(10, 6))
     sns.histplot(data=df_origin['payer_code'], bins=5, color='skyblue')
     plt.title('Payer Code Count Distribution')
@@ -21,6 +22,7 @@ with tab1:
     st.pyplot(plt)
 
 with tab2:
+    st.markdown(f"**Definition:** {df_variables[df_variables['name']=='medical_specialty']['description']}")
     unique_specialties = df_origin['medical_specialty'].dropna().unique()
     n=2
     split_arrays_specialties = np.array_split(unique_specialties, n)

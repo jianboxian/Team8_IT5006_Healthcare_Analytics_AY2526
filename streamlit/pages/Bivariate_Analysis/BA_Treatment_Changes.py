@@ -12,6 +12,7 @@ readmitted_statuses = df_origin['readmitted'].unique()
 tab1, tab2= st.tabs(['change', 'diabetesMed'])
 
 with tab1:
+    st.markdown(f"**Definition:** {df_variables[df_variables['name']=='change']['description']}")
     plt.figure(figsize=(10, 6))
     sns.histplot(data=df_origin['change'], bins=5, color='skyblue')
     plt.title('Change Count Distribution')
@@ -41,6 +42,7 @@ with tab1:
     plt.tight_layout()
     st.pyplot(plt)
 with tab2:
+    st.markdown(f"**Definition:** {df_variables[df_variables['name']=='diabetesMed']['description']}")
     plt.figure(figsize=(10, 6))
     sns.histplot(data=df_origin['diabetesMed'], bins=5, color='lightgreen')
     plt.title('Diabetes Medication Count Distribution')

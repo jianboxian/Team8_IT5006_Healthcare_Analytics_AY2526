@@ -13,6 +13,7 @@ readmitted_statuses = df_origin['readmitted'].unique()
 tab1, tab2, tab3= st.tabs(['dia_1', 'diag_2', 'diag_3'])
 
 with tab1:
+    st.markdown(f"**Definition:** {df_variables[df_variables['name']=='diag_1']['description']}")
     plt.figure(figsize=(10, 6))
     sns.countplot(data=df_origin, x='diag_1', hue='readmitted', stat="count")
     plt.xlabel('Diagnosis 1')
@@ -44,6 +45,7 @@ with tab1:
     st.pyplot(plt)
 
 with tab2:
+    st.markdown(f"**Definition:** {df_variables[df_variables['name']=='diag_2']['description']}")
     plt.figure(figsize=(10, 6))
     sns.countplot(data=df_origin, x='diag_2', hue='readmitted', stat="count")
     plt.xlabel('Diagnosis 2')
@@ -74,6 +76,7 @@ with tab2:
     plt.tight_layout()
     st.pyplot(plt)
 with tab3:
+    st.markdown(f"**Definition:** {df_variables[df_variables['name']=='diag_3']['description']}")
     plt.figure(figsize=(10, 6))
     sns.countplot(data=df_origin, x='diag_3', hue='readmitted', stat="count")
     plt.xlabel('Diagnosis 3')

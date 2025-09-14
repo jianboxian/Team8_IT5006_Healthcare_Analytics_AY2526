@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-st.title("Healthcare Provider Distribution Histograms & Pie Chart")
+st.title("Healthcare Provider Distribution Histograms")
 
 df_variables = st.session_state["df_variables"]
 df_origin = st.session_state["df_origin"]
@@ -14,6 +14,7 @@ readmitted_statuses = df_origin['readmitted'].unique()
 tab1, tab2= st.tabs(['payer_code', 'medical_specialty'])
 
 with tab1:
+    st.markdown(f"**Definition:** {df_variables[df_variables['name']=='payer_code']['description']}")
     plt.figure(figsize=(10, 6))
     sns.countplot(data=df_origin, x='payer_code', hue='readmitted', stat="count")
     plt.xlabel('Payer Code')
@@ -45,6 +46,7 @@ with tab1:
     st.pyplot(plt)
 
 with tab2:
+    st.markdown(f"**Definition:** {df_variables[df_variables['name']=='medical_specialty']['description']}")
     plt.figure(figsize=(10, 6))
     sns.countplot(data=df_origin, x='medical_specialty', hue='readmitted', stat="count")
     plt.xlabel('Medical Specialty')
